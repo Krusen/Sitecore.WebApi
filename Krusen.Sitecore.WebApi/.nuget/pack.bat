@@ -1,0 +1,1 @@
+nuget pack Krusen.Sitecore.WebApi.nuspec

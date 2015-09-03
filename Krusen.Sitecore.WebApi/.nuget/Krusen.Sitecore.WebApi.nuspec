@@ -7,7 +7,7 @@
     <authors>Søren Kruse</authors>
     <owners>Søren Kruse</owners>
     <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
-    <!--<projectUrl></projectUrl>-->
+    <projectUrl>https://github.com/Krusen/Sitecore.WebApi</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Enables support for using attribute routing with Web API 2 in Sitecore 7.5 and Sitecore 8</description>
     <releaseNotes></releaseNotes>

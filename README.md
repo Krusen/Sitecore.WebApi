@@ -1,3 +1,19 @@
+#Sitecore 7.5/8.0, Web API and Attribute Routing
+
+If you are working with Sitecore 7.5 or later you might have run into issues with getting Attribute Routing to work with Web API.
+
+With Sitecore 7.5 Sitecore added some web services to their product which are configured in the `initialize` pipeline.
+
+```XML
+<processor type="Sitecore.Services.Infrastructure.Sitecore.Pipelines.ServicesWebApiInitializer,
+                 Sitecore.Services.Infrastructure.Sitecore" 
+           patch:source="Sitecore.Services.Client.config" />
+```
+
+When configuring their services they also replace the default `IHttpControllerSelector` with their own implementation `NamespaceHttpControllerSelector` which doesn't support Attribute Routing.
+
+The workaround is to create an `IHttpControllerSelector` that supports both and patch in it after Sitecore's configuration. This way Sitecore's own stuff will keep working while we can also use Attribute Routing.
+
 # Krusen.Sitecore.WebApi [![NuGet](https://img.shields.io/nuget/v/Krusen.Sitecore.WebApi.svg)](https://www.nuget.org/packages/Krusen.Sitecore.WebApi/) [![NuGet](https://img.shields.io/nuget/dt/Krusen.Sitecore.WebApi.svg)](https://www.nuget.org/packages/Krusen.Sitecore.WebApi/)
 
 Use this nuget package if you just want Web API 2 and Attribute Routing to work with your Sitecore 7.5 or Sitecore 8 solution.
